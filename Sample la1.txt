@@ -1,0 +1,207 @@
+
+khushi@khushi:~$ mongoimport --type csv -d airquality -c inventory --headerline --drop /home/khushi/Downloads/stations.csv
+2021-04-19T12:17:06.967+0530	connected to: localhost
+2021-04-19T12:17:06.967+0530	dropping: airquality.inventory
+2021-04-19T12:17:06.991+0530	imported 230 documents
+khushi@khushi:~$ mongoimport --db airquality --collections inventory --file /home/khushi/Downloads/stations.csv
+2021-04-19T12:30:16.046+0530	error parsing command line options: unknown option "collections"
+2021-04-19T12:30:16.046+0530	try 'mongoimport --help' for more information
+khushi@khushi:~$ mongoimport --db airquality --collection inventory --file /home/khushi/Downloads/stations.csv
+2021-04-19T12:30:30.474+0530	connected to: localhost
+2021-04-19T12:30:30.474+0530	Failed: error processing document #1: invalid character 'S' looking for beginning of value
+2021-04-19T12:30:30.474+0530	imported 0 documents
+khushi@khushi:~$ mongo
+MongoDB shell version v3.6.8
+connecting to: mongodb://127.0.0.1:27017
+Implicit session: session { "id" : UUID("9407b40a-ed96-4d47-915b-94b3ec6ec9ac") }
+MongoDB server version: 3.6.8
+Server has startup warnings: 
+2021-04-19T11:04:09.384+0530 I STORAGE  [initandlisten] 
+2021-04-19T11:04:09.384+0530 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2021-04-19T11:04:09.384+0530 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2021-04-19T11:04:10.761+0530 I CONTROL  [initandlisten] 
+2021-04-19T11:04:10.761+0530 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2021-04-19T11:04:10.761+0530 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2021-04-19T11:04:10.761+0530 I CONTROL  [initandlisten] 
+> show dbs
+admin       0.000GB
+airquality  0.000GB
+company     0.000GB
+config      0.000GB
+customer    0.000GB
+local       0.000GB
+mydb        0.000GB
+> use airquality
+switched to db airquality
+> show collections
+inventory
+> db.inventory.find()
+{ "_id" : ObjectId("607d276afa556e9e983d6db8"), "StationId" : "AP001", "StationName" : "Secretariat, Amaravati - APPCB", "City" : "Amaravati", "State" : "Andhra Pradesh", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6db9"), "StationId" : "AP002", "StationName" : "Anand Kala Kshetram, Rajamahendravaram - APPCB", "City" : "Rajamahendravaram", "State" : "Andhra Pradesh", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dba"), "StationId" : "AP004", "StationName" : "PWD Grounds, Vijayawada - APPCB", "City" : "Vijayawada", "State" : "Andhra Pradesh", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbb"), "StationId" : "AP005", "StationName" : "GVM Corporation, Visakhapatnam - APPCB", "City" : "Visakhapatnam", "State" : "Andhra Pradesh", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbc"), "StationId" : "AS001", "StationName" : "Railway Colony, Guwahati - APCB", "City" : "Guwahati", "State" : "Assam", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbd"), "StationId" : "AP003", "StationName" : "Tirumala, Tirupati - APPCB", "City" : "Tirupati", "State" : "Andhra Pradesh", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbe"), "StationId" : "BR001", "StationName" : "Collectorate, Gaya - BSPCB", "City" : "Gaya", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbf"), "StationId" : "BR002", "StationName" : "SFTI Kusdihra, Gaya - BSPCB", "City" : "Gaya", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc0"), "StationId" : "BR005", "StationName" : "DRM Office Danapur, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc1"), "StationId" : "BR003", "StationName" : "Industrial Area, Hajipur - BSPCB", "City" : "Hajipur", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc2"), "StationId" : "BR004", "StationName" : "Muzaffarpur Collectorate, Muzaffarpur - BSPCB", "City" : "Muzaffarpur", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc3"), "StationId" : "BR006", "StationName" : "Govt. High School Shikarpur, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc4"), "StationId" : "BR008", "StationName" : "Muradpur, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc5"), "StationId" : "CH001", "StationName" : "Sector-25, Chandigarh - CPCC", "City" : "Chandigarh", "State" : "Chandigarh", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc6"), "StationId" : "DL001", "StationName" : "Alipur, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc7"), "StationId" : "DL002", "StationName" : "Anand Vihar, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc8"), "StationId" : "DL003", "StationName" : "Ashok Vihar, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc9"), "StationId" : "BR010", "StationName" : "Samanpura, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dca"), "StationId" : "DL005", "StationName" : "Bawana, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dcb"), "StationId" : "BR009", "StationName" : "Rajbansi Nagar, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+Type "it" for more
+> exit
+bye
+khushi@khushi:~$ mongoexport -db airquality -c inventory --out /home/khushi/Downloads/stations.csv
+2021-04-19T12:39:59.866+0530	too many positional arguments: [airquality]
+2021-04-19T12:39:59.866+0530	try 'mongoexport --help' for more information
+khushi@khushi:~$ mongoexport --db airquality -c inventory --out /home/khushi/Downloads/stations.csv
+2021-04-19T12:41:36.411+0530	connected to: localhost
+2021-04-19T12:41:36.416+0530	exported 230 records
+khushi@khushi:~$ mongo
+MongoDB shell version v3.6.8
+connecting to: mongodb://127.0.0.1:27017
+Implicit session: session { "id" : UUID("999ce1b4-21e2-4534-bf40-d749d7679262") }
+MongoDB server version: 3.6.8
+Server has startup warnings: 
+2021-04-19T11:04:09.384+0530 I STORAGE  [initandlisten] 
+2021-04-19T11:04:09.384+0530 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2021-04-19T11:04:09.384+0530 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2021-04-19T11:04:10.761+0530 I CONTROL  [initandlisten] 
+2021-04-19T11:04:10.761+0530 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2021-04-19T11:04:10.761+0530 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2021-04-19T11:04:10.761+0530 I CONTROL  [initandlisten] 
+> show dbs
+admin       0.000GB
+airquality  0.000GB
+company     0.000GB
+config      0.000GB
+customer    0.000GB
+local       0.000GB
+mydb        0.000GB
+> use airquality
+switched to db airquality
+> show collections
+inventory
+> db.inventory.find()
+{ "_id" : ObjectId("607d276afa556e9e983d6db8"), "StationId" : "AP001", "StationName" : "Secretariat, Amaravati - APPCB", "City" : "Amaravati", "State" : "Andhra Pradesh", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6db9"), "StationId" : "AP002", "StationName" : "Anand Kala Kshetram, Rajamahendravaram - APPCB", "City" : "Rajamahendravaram", "State" : "Andhra Pradesh", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dba"), "StationId" : "AP004", "StationName" : "PWD Grounds, Vijayawada - APPCB", "City" : "Vijayawada", "State" : "Andhra Pradesh", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbb"), "StationId" : "AP005", "StationName" : "GVM Corporation, Visakhapatnam - APPCB", "City" : "Visakhapatnam", "State" : "Andhra Pradesh", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbc"), "StationId" : "AS001", "StationName" : "Railway Colony, Guwahati - APCB", "City" : "Guwahati", "State" : "Assam", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbd"), "StationId" : "AP003", "StationName" : "Tirumala, Tirupati - APPCB", "City" : "Tirupati", "State" : "Andhra Pradesh", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbe"), "StationId" : "BR001", "StationName" : "Collectorate, Gaya - BSPCB", "City" : "Gaya", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbf"), "StationId" : "BR002", "StationName" : "SFTI Kusdihra, Gaya - BSPCB", "City" : "Gaya", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc0"), "StationId" : "BR005", "StationName" : "DRM Office Danapur, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc1"), "StationId" : "BR003", "StationName" : "Industrial Area, Hajipur - BSPCB", "City" : "Hajipur", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc2"), "StationId" : "BR004", "StationName" : "Muzaffarpur Collectorate, Muzaffarpur - BSPCB", "City" : "Muzaffarpur", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc3"), "StationId" : "BR006", "StationName" : "Govt. High School Shikarpur, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc4"), "StationId" : "BR008", "StationName" : "Muradpur, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc5"), "StationId" : "CH001", "StationName" : "Sector-25, Chandigarh - CPCC", "City" : "Chandigarh", "State" : "Chandigarh", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc6"), "StationId" : "DL001", "StationName" : "Alipur, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc7"), "StationId" : "DL002", "StationName" : "Anand Vihar, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc8"), "StationId" : "DL003", "StationName" : "Ashok Vihar, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc9"), "StationId" : "BR010", "StationName" : "Samanpura, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dca"), "StationId" : "DL005", "StationName" : "Bawana, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dcb"), "StationId" : "BR009", "StationName" : "Rajbansi Nagar, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+Type "it" for more
+> db.inventory.find({"city":{$exists:true}})
+> db.inventory.find({"City":{$exists:true}})
+{ "_id" : ObjectId("607d276afa556e9e983d6db8"), "StationId" : "AP001", "StationName" : "Secretariat, Amaravati - APPCB", "City" : "Amaravati", "State" : "Andhra Pradesh", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6db9"), "StationId" : "AP002", "StationName" : "Anand Kala Kshetram, Rajamahendravaram - APPCB", "City" : "Rajamahendravaram", "State" : "Andhra Pradesh", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dba"), "StationId" : "AP004", "StationName" : "PWD Grounds, Vijayawada - APPCB", "City" : "Vijayawada", "State" : "Andhra Pradesh", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbb"), "StationId" : "AP005", "StationName" : "GVM Corporation, Visakhapatnam - APPCB", "City" : "Visakhapatnam", "State" : "Andhra Pradesh", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbc"), "StationId" : "AS001", "StationName" : "Railway Colony, Guwahati - APCB", "City" : "Guwahati", "State" : "Assam", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbd"), "StationId" : "AP003", "StationName" : "Tirumala, Tirupati - APPCB", "City" : "Tirupati", "State" : "Andhra Pradesh", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbe"), "StationId" : "BR001", "StationName" : "Collectorate, Gaya - BSPCB", "City" : "Gaya", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbf"), "StationId" : "BR002", "StationName" : "SFTI Kusdihra, Gaya - BSPCB", "City" : "Gaya", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc0"), "StationId" : "BR005", "StationName" : "DRM Office Danapur, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc1"), "StationId" : "BR003", "StationName" : "Industrial Area, Hajipur - BSPCB", "City" : "Hajipur", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc2"), "StationId" : "BR004", "StationName" : "Muzaffarpur Collectorate, Muzaffarpur - BSPCB", "City" : "Muzaffarpur", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc3"), "StationId" : "BR006", "StationName" : "Govt. High School Shikarpur, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc4"), "StationId" : "BR008", "StationName" : "Muradpur, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc5"), "StationId" : "CH001", "StationName" : "Sector-25, Chandigarh - CPCC", "City" : "Chandigarh", "State" : "Chandigarh", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc6"), "StationId" : "DL001", "StationName" : "Alipur, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc7"), "StationId" : "DL002", "StationName" : "Anand Vihar, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc8"), "StationId" : "DL003", "StationName" : "Ashok Vihar, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc9"), "StationId" : "BR010", "StationName" : "Samanpura, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dca"), "StationId" : "DL005", "StationName" : "Bawana, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dcb"), "StationId" : "BR009", "StationName" : "Rajbansi Nagar, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+Type "it" for more
+> db.inventory.find({"City":{$type:1}})
+> db.inventory.find({"City":{$type:2}})
+{ "_id" : ObjectId("607d276afa556e9e983d6db8"), "StationId" : "AP001", "StationName" : "Secretariat, Amaravati - APPCB", "City" : "Amaravati", "State" : "Andhra Pradesh", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6db9"), "StationId" : "AP002", "StationName" : "Anand Kala Kshetram, Rajamahendravaram - APPCB", "City" : "Rajamahendravaram", "State" : "Andhra Pradesh", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dba"), "StationId" : "AP004", "StationName" : "PWD Grounds, Vijayawada - APPCB", "City" : "Vijayawada", "State" : "Andhra Pradesh", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbb"), "StationId" : "AP005", "StationName" : "GVM Corporation, Visakhapatnam - APPCB", "City" : "Visakhapatnam", "State" : "Andhra Pradesh", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbc"), "StationId" : "AS001", "StationName" : "Railway Colony, Guwahati - APCB", "City" : "Guwahati", "State" : "Assam", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbd"), "StationId" : "AP003", "StationName" : "Tirumala, Tirupati - APPCB", "City" : "Tirupati", "State" : "Andhra Pradesh", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbe"), "StationId" : "BR001", "StationName" : "Collectorate, Gaya - BSPCB", "City" : "Gaya", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbf"), "StationId" : "BR002", "StationName" : "SFTI Kusdihra, Gaya - BSPCB", "City" : "Gaya", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc0"), "StationId" : "BR005", "StationName" : "DRM Office Danapur, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc1"), "StationId" : "BR003", "StationName" : "Industrial Area, Hajipur - BSPCB", "City" : "Hajipur", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc2"), "StationId" : "BR004", "StationName" : "Muzaffarpur Collectorate, Muzaffarpur - BSPCB", "City" : "Muzaffarpur", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc3"), "StationId" : "BR006", "StationName" : "Govt. High School Shikarpur, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc4"), "StationId" : "BR008", "StationName" : "Muradpur, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc5"), "StationId" : "CH001", "StationName" : "Sector-25, Chandigarh - CPCC", "City" : "Chandigarh", "State" : "Chandigarh", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc6"), "StationId" : "DL001", "StationName" : "Alipur, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc7"), "StationId" : "DL002", "StationName" : "Anand Vihar, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc8"), "StationId" : "DL003", "StationName" : "Ashok Vihar, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc9"), "StationId" : "BR010", "StationName" : "Samanpura, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dca"), "StationId" : "DL005", "StationName" : "Bawana, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dcb"), "StationId" : "BR009", "StationName" : "Rajbansi Nagar, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+Type "it" for more
+> db.inventory.find({"StationName":{$regex:"e"}})
+{ "_id" : ObjectId("607d276afa556e9e983d6db8"), "StationId" : "AP001", "StationName" : "Secretariat, Amaravati - APPCB", "City" : "Amaravati", "State" : "Andhra Pradesh", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6db9"), "StationId" : "AP002", "StationName" : "Anand Kala Kshetram, Rajamahendravaram - APPCB", "City" : "Rajamahendravaram", "State" : "Andhra Pradesh", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbe"), "StationId" : "BR001", "StationName" : "Collectorate, Gaya - BSPCB", "City" : "Gaya", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc0"), "StationId" : "BR005", "StationName" : "DRM Office Danapur, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc1"), "StationId" : "BR003", "StationName" : "Industrial Area, Hajipur - BSPCB", "City" : "Hajipur", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc2"), "StationId" : "BR004", "StationName" : "Muzaffarpur Collectorate, Muzaffarpur - BSPCB", "City" : "Muzaffarpur", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc5"), "StationId" : "CH001", "StationName" : "Sector-25, Chandigarh - CPCC", "City" : "Chandigarh", "State" : "Chandigarh", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc6"), "StationId" : "DL001", "StationName" : "Alipur, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc7"), "StationId" : "DL002", "StationName" : "Anand Vihar, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc8"), "StationId" : "DL003", "StationName" : "Ashok Vihar, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dca"), "StationId" : "DL005", "StationName" : "Bawana, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dcc"), "StationId" : "DL004", "StationName" : "Aya Nagar, Delhi - IMD", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dcd"), "StationId" : "BR007", "StationName" : "IGSC Planetarium Complex, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dce"), "StationId" : "DL006", "StationName" : "Burari Crossing, Delhi - IMD", "City" : "Delhi", "State" : "Delhi", "Status" : "Inactive" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dcf"), "StationId" : "DL007", "StationName" : "CRRI Mathura Road, Delhi - IMD", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dd0"), "StationId" : "DL009", "StationName" : "Dr. Karni Singh Shooting Range, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dd1"), "StationId" : "DL008", "StationName" : "DTU, Delhi - CPCB", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dd2"), "StationId" : "DL010", "StationName" : "Dwarka-Sector 8, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dd3"), "StationId" : "DL011", "StationName" : "East Arjun Nagar, Delhi - CPCB", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dd4"), "StationId" : "DL012", "StationName" : "IGI Airport (T3), Delhi - IMD", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+Type "it" for more
+> db.inventory.find({"StationName":{$regex:"^E"}})
+{ "_id" : ObjectId("607d276afa556e9e983d6dd3"), "StationId" : "DL011", "StationName" : "East Arjun Nagar, Delhi - CPCB", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+> db.inventory.find({"StationName":{$regex:"^[A-Z]"}})
+{ "_id" : ObjectId("607d276afa556e9e983d6db8"), "StationId" : "AP001", "StationName" : "Secretariat, Amaravati - APPCB", "City" : "Amaravati", "State" : "Andhra Pradesh", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6db9"), "StationId" : "AP002", "StationName" : "Anand Kala Kshetram, Rajamahendravaram - APPCB", "City" : "Rajamahendravaram", "State" : "Andhra Pradesh", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dba"), "StationId" : "AP004", "StationName" : "PWD Grounds, Vijayawada - APPCB", "City" : "Vijayawada", "State" : "Andhra Pradesh", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbb"), "StationId" : "AP005", "StationName" : "GVM Corporation, Visakhapatnam - APPCB", "City" : "Visakhapatnam", "State" : "Andhra Pradesh", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbc"), "StationId" : "AS001", "StationName" : "Railway Colony, Guwahati - APCB", "City" : "Guwahati", "State" : "Assam", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbd"), "StationId" : "AP003", "StationName" : "Tirumala, Tirupati - APPCB", "City" : "Tirupati", "State" : "Andhra Pradesh", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbe"), "StationId" : "BR001", "StationName" : "Collectorate, Gaya - BSPCB", "City" : "Gaya", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dbf"), "StationId" : "BR002", "StationName" : "SFTI Kusdihra, Gaya - BSPCB", "City" : "Gaya", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc0"), "StationId" : "BR005", "StationName" : "DRM Office Danapur, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc1"), "StationId" : "BR003", "StationName" : "Industrial Area, Hajipur - BSPCB", "City" : "Hajipur", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc2"), "StationId" : "BR004", "StationName" : "Muzaffarpur Collectorate, Muzaffarpur - BSPCB", "City" : "Muzaffarpur", "State" : "Bihar", "Status" : "" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc3"), "StationId" : "BR006", "StationName" : "Govt. High School Shikarpur, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc4"), "StationId" : "BR008", "StationName" : "Muradpur, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc5"), "StationId" : "CH001", "StationName" : "Sector-25, Chandigarh - CPCC", "City" : "Chandigarh", "State" : "Chandigarh", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc6"), "StationId" : "DL001", "StationName" : "Alipur, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc7"), "StationId" : "DL002", "StationName" : "Anand Vihar, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc8"), "StationId" : "DL003", "StationName" : "Ashok Vihar, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dc9"), "StationId" : "BR010", "StationName" : "Samanpura, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dca"), "StationId" : "DL005", "StationName" : "Bawana, Delhi - DPCC", "City" : "Delhi", "State" : "Delhi", "Status" : "Active" }
+{ "_id" : ObjectId("607d276afa556e9e983d6dcb"), "StationId" : "BR009", "StationName" : "Rajbansi Nagar, Patna - BSPCB", "City" : "Patna", "State" : "Bihar", "Status" : "Active" }
+Type "it" for more
+> 
